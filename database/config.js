@@ -1,5 +1,5 @@
 module.exports = {
     host: 'localhost',
     user: 'root',
-    database: 'yelp'
+    database: 'photo_gallery'
 }
