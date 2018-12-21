@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const PORT = 3001;
 
-app.use(express.static(path.join(__dirname, 'fill in bundle.js later')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 

@@ -3,7 +3,7 @@ const mysql = require('mysql');
 
 const connection = mysql.createConnection(dbConfig);
 
-connection.connect((err => {
+connection.connect((err) => {
     if (err) {
         throw err;
     } else {
