@@ -1,6 +1,6 @@
 module.exports = {
     host: 'localhost',
     user: 'root',
-    password: 'megaman3127',
+    password: 'password',
     database: 'photo_gallery'
 }
