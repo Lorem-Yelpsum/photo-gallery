@@ -4,11 +4,6 @@ CREATE DATABASE photo_gallery;
 
 USE photo_gallery;
 
-CREATE TABLE restaurants(
-    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
-);
-
 CREATE TABLE users(
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     user VARCHAR(25) NOT NULL,
@@ -25,7 +20,6 @@ CREATE TABLE pictures(
     rating INT NULL,
     comments VARCHAR(55) NOT NULL,
     day VARCHAR(20) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (restaurant_id) REFERENCES restaurants(id)
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 

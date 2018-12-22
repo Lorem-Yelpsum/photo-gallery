@@ -10,11 +10,6 @@ for (var x = 0; x < 50; x++) {
 
 }
 
-for (var i = 0; i < 100; i++) {
-    var restaurant = faker.company.companyName();
-    db.connection.query(`INSERT INTO restaurants (name) VALUES ("${restaurant}")`);
-}
-
 for (var j = 0; j < 500; j++) {
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     var date = faker.date.past(2).toLocaleDateString('en-US').split('/')
