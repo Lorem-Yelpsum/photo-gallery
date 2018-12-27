@@ -3,14 +3,22 @@ const faker = require('faker');
 
 for (var x = 0; x < 50; x++) {
     var user = faker.name.findName();
+    var picturesArray = [
+        'https://s3-us-west-1.amazonaws.com/photo-gallery-lorem-yelpsum/Photo-gallery/lorem-user1.jpeg',
+        'https://s3-us-west-1.amazonaws.com/photo-gallery-lorem-yelpsum/Photo-gallery/lorem-user2.jpeg',
+        'https://s3-us-west-1.amazonaws.com/photo-gallery-lorem-yelpsum/Photo-gallery/lorem-user3.jpeg',
+        'https://s3-us-west-1.amazonaws.com/photo-gallery-lorem-yelpsum/Photo-gallery/lorem-user4.jpeg',
+        'https://s3-us-west-1.amazonaws.com/photo-gallery-lorem-yelpsum/Photo-gallery/lorem-user5.jpeg'
+    ]
+    var picture = picturesArray[faker.random.number({'min': 0, 'max': 4})];
     var status = faker.random.number({'min': 0, 'max': 1});
     var friendsAmount = Math.floor(Math.random() * (500 - 25)) + 25
     var reviewsAmount = Math.floor(Math.random() * 200);
-    db.connection.query(`INSERT INTO users (user, elite, friends, reviews) VALUES ("${user}", ${status}, ${friendsAmount}, ${reviewsAmount})`);
+    db.connection.query(`INSERT INTO users (user, userPic, elite, friends, reviews) VALUES ("${user}", "${picture}",${status}, ${friendsAmount}, ${reviewsAmount})`);
 
 }
 
-for (var j = 0; j < 500; j++) {
+for (var j = 0; j < 1000; j++) {
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     var date = faker.date.past(2).toLocaleDateString('en-US').split('/')
         date[0] = months[Number(date[0])-1];
