@@ -2,8 +2,8 @@ import React from 'react';
 import Photos from './Photos.jsx';
 
 class Gallery extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             photos: [],
             resturantId: 1
@@ -24,7 +24,6 @@ class Gallery extends React.Component {
         })
         .then(res => res.json())
         .then((gallery) => {
-            console.log(gallery);
             this.setState({
                 photos: gallery
             })
