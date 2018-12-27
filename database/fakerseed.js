@@ -18,7 +18,7 @@ for (var x = 0; x < 50; x++) {
 
 }
 
-for (var j = 0; j < 1000; j++) {
+for (var j = 0; j < 2000; j++) {
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     var date = faker.date.past(2).toLocaleDateString('en-US').split('/')
         date[0] = months[Number(date[0])-1];

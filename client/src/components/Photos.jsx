@@ -1,4 +1,5 @@
 import React from 'react';
+import Collection from './Collection.jsx';
 
 const selected = {
     current: 'current',
@@ -27,7 +28,7 @@ class Photos extends React.Component{
                     </div>
                     <div className= 'photo3'>
                         <div>
-                        <img src={this.props.photo[2].url}></img>
+                        <Collection photos={this.props.photo.slice(2)} />
                         <div className = 'overlay'></div>
                         </div>
                     </div>
