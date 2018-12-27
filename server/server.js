@@ -14,14 +14,13 @@ app.get('/:restId/photos', (req,res) => {
         if (err) {
             throw err;
         } else {
-            res.status(200).json(result);
+            res.status(200);
+            console.log('hello');
+            res.send(result);
         }
     })
 });
 
-app.get('/:restId/:photoId', (req, res)=> {
-
-});
 
 app.listen(PORT, function(err){
     if(err) {
