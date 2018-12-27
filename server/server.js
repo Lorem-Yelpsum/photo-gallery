@@ -15,7 +15,6 @@ app.get('/:restId/photos', (req,res) => {
             throw err;
         } else {
             res.status(200);
-            console.log('hello');
             res.send(result);
         }
     })
