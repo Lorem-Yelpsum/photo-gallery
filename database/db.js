@@ -12,7 +12,7 @@ connection.connect((err) => {
 })
 
 const grabPhotos = (id, callback) => {
-    connection.query(`SELECT user, elite, friends, reviews, url, restaurant_id, rating, comments, day FROM users INNER JOIN pictures ON user_id = users.id WHERE restaurant_id = ${id}`, (err, result) => {
+    connection.query(`SELECT user, userPic, elite, friends, reviews, url, restaurant_id, rating, comments, day FROM users INNER JOIN pictures ON user_id = users.id WHERE restaurant_id = ${id}`, (err, result) => {
         if (err) {
             throw err;
         } else {

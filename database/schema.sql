@@ -7,6 +7,7 @@ USE photo_gallery;
 CREATE TABLE users(
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     user VARCHAR(25) NOT NULL,
+    userPic VARCHAR(255) NOT NULL,
     elite TINYINT NOT NULL,
     friends INT NOT NULL,
     reviews INT NOT NULL

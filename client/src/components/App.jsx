@@ -6,7 +6,7 @@ class Gallery extends React.Component {
         super(props)
         this.state = {
             photos: [],
-            resturantId: 1
+            resturantId: 3
         }
         this.grabPhotos = this.grabPhotos.bind(this);
     }
