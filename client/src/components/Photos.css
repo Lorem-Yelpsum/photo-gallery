@@ -1,8 +1,27 @@
+.photo-layout{
+    width: 660px;
+    height: 220px;
+}
+
 .overlay{
-    width: 25%;
-    height: 20%;
+    position: absolute;
+    width: 250px;
+    height: 48px;
     background: rgba(0,0,0,0.6);
     opacity: 0;
+}
+
+.regular {
+    position: relative;
+    object-fit: cover;
+    width: 220px;
+    height: 220px;
+}
+
+.selected {
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
 }
 
 .overlay:hover{
@@ -10,20 +29,32 @@
 }
 
 .userPic{
-    width: 10%;
-    height: 10%;
+    width: 40px;
+    height: 50px;
 }
 
 .photo1 {
-
+    float: left;
+    position: relative;
+    top: 20px;
 }
 
 .photo2 {
-
+    float: center;
+    left: 220px;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    top: -200px;
 }
 
 .photo3 {
-
+    float: right;
+    width: 220px;
+    height: 220px;
+    position: relative;
+    top: -230px;
+    left: -5px;
 }
 
 .collectionOverlay {
