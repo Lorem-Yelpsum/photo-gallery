@@ -1,13 +1,15 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
+import style from './collection.css'
 
-export default class Collection extends React.Component {
+class Collection extends React.Component {
     constructor (props) {
         super(props)
         this.state;
     }
     render () {
         return (
-            <div>
+            <div styleName = "show-all" onMouseOver = {this.props.over} onMouseLeave = {this.props.leave}>
                 <img src={this.props.photos[0].url}></img>
                 <img src={this.props.photos[1].url}></img>
                 <img src={this.props.photos[2].url}></img>
@@ -16,3 +18,5 @@ export default class Collection extends React.Component {
         )
     }
 }
+
+export default CSSModules(Collection, style, {allowMultiple: true});
