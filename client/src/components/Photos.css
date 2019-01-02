@@ -1,33 +1,116 @@
-.overlay{
-    width: 25%;
-    height: 20%;
-    background: rgba(0,0,0,0.6);
-    opacity: 0;
+.photo-layout{
+    width: 660px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
 }
 
-.overlay:hover{
+.hide{
+    position: absolute;
+    width: 250px;
+    height: 48px;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    z-index: 10;
+    -webkit-box-flex: 1;
+    display: flex;
+    flex: 1;
+    top: 200px;
+    font-family: 'Helvetica Neue', Helvetica, Arial;
+    font-size: 12px;
+    line-height: 1.5em;
+    color: rgba(225,225,225,0.9);
+    overflow-wrap: break-word;
+    vertical-align: baseline;
+}
+
+.text {
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline-block;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+}
+
+.text-box {
+    width: 195px;
+    height: 36px;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 10px;
+    top: -5px;
+}
+
+.regular {
+    position: relative;
+    object-fit: cover;
+    width: 220px;
+    height: 220px;
+}
+
+.selected {
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+}
+
+.display{
+    position: absolute;
+    width: 250px;
+    height: 48px;
+    background: rgba(0,0,0,0.5);
     opacity: 1;
+    z-index: 10;
+    -webkit-box-flex: 1;
+    display: flex;
+    flex: 1;
+    top: 200px;
+    font-family: 'Helvetica Neue', Helvetica, Arial;
+    font-size: 12px;
+    line-height: 1.5em;
+    color: rgba(225,225,225,0.9);
+    overflow-wrap: break-word;
+    vertical-align: baseline;
+    transition: all 0.3s ease-in-out;
 }
 
 .userPic{
-    width: 10%;
-    height: 10%;
+    width: 36px;
+    height: 36px;
+    border-radius: 10%;
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+
+.user{
+    position: relative;
+    left: 5px;
 }
 
 .photo1 {
-
+    position: relative;
 }
 
 .photo2 {
-
+    position: relative; 
 }
 
 .photo3 {
-
+    width: 220px;
+    height: 220px;
+    position: relative;
 }
 
 .collectionOverlay {
-    
+    opacity: 1;
+    background-color: rgba(0,0,0,0.5);
 }
 
 
