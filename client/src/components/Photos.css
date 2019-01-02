@@ -28,6 +28,11 @@
 .text {
     color: white;
     font-weight: bold;
+    white-space: nowrap;
+    display: inline-block;
+    clear: both;
+    overflow: hidden;
+    position: relative;
 }
 
 .text-box {
@@ -35,6 +40,11 @@
     height: 36px;
     min-width: 0;
     min-height: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 10px;
+    top: -5px;
 }
 
 .regular {
@@ -67,12 +77,21 @@
     color: rgba(225,225,225,0.9);
     overflow-wrap: break-word;
     vertical-align: baseline;
+    transition: all 0.3s ease-in-out;
 }
 
 .userPic{
     width: 36px;
     height: 36px;
     border-radius: 10%;
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+
+.user{
+    position: relative;
+    left: 5px;
 }
 
 .photo1 {

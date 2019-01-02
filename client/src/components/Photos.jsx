@@ -12,7 +12,8 @@ class Photos extends React.Component{
             photo2: 'selected',
             photo3: 'regular',
             overlay1: 'hide',
-            overlay2: 'display'
+            overlay2: 'display',
+            photoAmount: this.props.photo.length
         }
         this.handleHover1 = this.handleHover1.bind(this);
         this.handleHover2 = this.handleHover2.bind(this);
@@ -54,7 +55,9 @@ class Photos extends React.Component{
         this.setState({
             photo1: 'regular',
             photo2: 'selected',
-            photo3: 'regular'  
+            photo3: 'regular',
+            overlay2: 'display', 
+            overlay1: 'hide' 
         })
     }
 
@@ -66,12 +69,9 @@ class Photos extends React.Component{
                         <div>
                             <img src={this.props.photo[0].url} styleName = {this.state.photo1} onMouseOver = {this.handleHover1} onMouseLeave = {this.handleLeave}></img>
                             <div styleName = {this.state.overlay1}>
-                                <img src={this.props.photo[0].userPic} styleName= 'userPic'></img>
-                                <div styleName='text-box'>
-                                    <div styleName = 'text'>{this.props.photo[0].comments}</div>
-                                    <span>by
-                                        <div>{this.props.photo[0].user}</div>
-                                    </span>
+                            <img src={this.props.photo[0].userPic} styleName= 'userPic'></img>
+                                <div styleName ='text-box'>
+                                    <span styleName = 'text'>{this.props.photo[0].comments} </span> <span styleName ='user'>by {this.props.photo[0].user}</span>
                                 </div>
                             </div>
                         </div>
@@ -82,10 +82,7 @@ class Photos extends React.Component{
                             <div styleName = {this.state.overlay2}>
                                 <img src={this.props.photo[1].userPic} styleName= 'userPic'></img>
                                 <div styleName ='text-box'>
-                                    <div styleName = 'text'>{this.props.photo[1].comments}</div>
-                                    <span>by
-                                        <div>{this.props.photo[1].user}</div>
-                                    </span>
+                                    <span styleName = 'text'>{this.props.photo[1].comments} </span> <span styleName ='user'>by {this.props.photo[1].user}</span>
                                 </div>
                             </div>
                         </div>
