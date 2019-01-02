@@ -2,6 +2,7 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import Collection from './Collection.jsx';
 import style from './Photos.css';
+import Icon from './Icon.jsx';
 
 
 class Photos extends React.Component{
@@ -90,7 +91,9 @@ class Photos extends React.Component{
                     <div styleName= 'photo3'>
                         <div>
                         <Collection photos={this.props.photo.slice(2)} over= {this.handleHover3} leave= {this.handleLeave}/>
-                        <div styleName = 'collectionOverlay'></div>
+                        <div styleName = 'collectionOverlay'>
+                        <Icon name={'24x24_grid'} fill='#FFF' width={24} height={24}/>
+                        </div>
                         </div>
                     </div>
                 </div>
