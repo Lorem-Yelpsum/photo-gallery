@@ -1,14 +1,40 @@
 .photo-layout{
     width: 660px;
     height: 220px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
 }
 
-.overlay{
+.hide{
     position: absolute;
     width: 250px;
     height: 48px;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.5);
     opacity: 0;
+    z-index: 10;
+    -webkit-box-flex: 1;
+    display: flex;
+    flex: 1;
+    top: 200px;
+    font-family: 'Helvetica Neue', Helvetica, Arial;
+    font-size: 12px;
+    line-height: 1.5em;
+    color: rgba(225,225,225,0.9);
+    overflow-wrap: break-word;
+    vertical-align: baseline;
+}
+
+.text {
+    color: white;
+    font-weight: bold;
+}
+
+.text-box {
+    width: 195px;
+    height: 36px;
+    min-width: 0;
+    min-height: 0;
 }
 
 .regular {
@@ -24,41 +50,48 @@
     height: 250px;
 }
 
-.overlay:hover{
+.display{
+    position: absolute;
+    width: 250px;
+    height: 48px;
+    background: rgba(0,0,0,0.5);
     opacity: 1;
+    z-index: 10;
+    -webkit-box-flex: 1;
+    display: flex;
+    flex: 1;
+    top: 200px;
+    font-family: 'Helvetica Neue', Helvetica, Arial;
+    font-size: 12px;
+    line-height: 1.5em;
+    color: rgba(225,225,225,0.9);
+    overflow-wrap: break-word;
+    vertical-align: baseline;
 }
 
 .userPic{
-    width: 40px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10%;
 }
 
 .photo1 {
-    float: left;
     position: relative;
-    top: 20px;
 }
 
 .photo2 {
-    float: center;
-    left: 220px;
-    width: 250px;
-    height: 250px;
-    position: relative;
-    top: -200px;
+    position: relative; 
 }
 
 .photo3 {
-    float: right;
     width: 220px;
     height: 220px;
     position: relative;
-    top: -230px;
-    left: -5px;
 }
 
 .collectionOverlay {
-    
+    opacity: 1;
+    background-color: rgba(0,0,0,0.5);
 }
 
 
