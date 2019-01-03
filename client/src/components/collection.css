@@ -2,11 +2,13 @@
     width: 220px;
     height: 220px;
     display: grid;
-    grid-template-columns: 1fr, 1fr;
-    grid-template-rows: 1fr, 1fr;
-    flex: 50%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    border-spacing: 0;
+    border-collapse: collapse;
     padding: 0;
     position: relative;
+    top: -2px;
 }
 
 .normal {
@@ -14,16 +16,18 @@
     position: relative;
     width: 110px;
     height: 110px;
+    vertical-align: bottom;
 }
 
 .selected {
     width: 250px;
     height: 250px;
     display: grid;
-    grid-template-columns: 1fr, 1fr;
-    grid-template-rows: 1fr, 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     padding: 0;
     position: relative;
+    top: -2px;
 }
 
 .current {
@@ -31,6 +35,7 @@
     position: relative;
     width: 125px;
     height: 125px;
+    vertical-align: bottom;
 }
 
 .collectionOverlay {
