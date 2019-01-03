@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "nodemon server/server.js",
     "build": "webpack --mode production",
-    "faker": "node database/fakerseed.js"
+    "seed": "node database/fakerseed.js"
   },
   "repository": {
     "type": "git",
