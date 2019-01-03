@@ -6,7 +6,7 @@ class Gallery extends React.Component {
         super(props)
         this.state = {
             photos: [],
-            resturantId: 1
+            restaurantId: this.props.restaurantId
         }
         this.grabPhotos = this.grabPhotos.bind(this);
     }
@@ -16,7 +16,7 @@ class Gallery extends React.Component {
     }
 
     grabPhotos () {
-        fetch(`/${this.state.resturantId}/photos`, {
+        fetch(`/${this.state.restaurantId}/photos`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
