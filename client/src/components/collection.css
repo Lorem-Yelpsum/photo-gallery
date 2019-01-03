@@ -49,15 +49,27 @@
     text-align: center;
 }
 
-.colPos {
+.colPos1 {
     position: relative;
     left: 78px;
     top: -10px;
 }
 
-.colText {
+.colText1 {
     position: relative;
     top: 10px;
+}
+
+.colPos2 {
+    position: relative;
+    left: 89px;
+    top: -10px;
+}
+
+.colText2 {
+    position: relative;
+    top: 10px;
+    font-size: 16px;
 }
 
 

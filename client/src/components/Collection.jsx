@@ -8,7 +8,11 @@ class Collection extends React.Component {
         super(props)
         this.state = {
             table: 'regular',
-            grid: 'normal'
+            grid: 'normal',
+            colPos: 'colPos1',
+            colText: 'colText1',
+            height: 24,
+            width: 24
         }
     this.handleGridHover=this.handleGridHover.bind(this);
     this.handleGridLeave=this.handleGridLeave.bind(this);
@@ -17,14 +21,22 @@ class Collection extends React.Component {
     handleGridHover () {
         this.setState({
             table: 'selected',
-            grid: 'current'
+            grid: 'current',
+            colPos: 'colPos2',
+            colText: 'colText2',
+            height: 28,
+            width: 28
         })
     }
 
     handleGridLeave () {
         this.setState({
             table: 'regular',
-            grid: 'normal'
+            grid: 'normal',
+            colPos: 'colPos1',
+            colText: 'colText1',
+            height: 24,
+            width: 24
         })
     }
 
@@ -40,9 +52,9 @@ class Collection extends React.Component {
                     <td><img src={this.props.photos[3].url} styleName = {this.state.grid}></img></td>
                 </tr>
                 <div styleName = 'collectionOverlay'>
-                            <span styleName= 'colPos'>
-                                <div><Icon name={'24x24_grid'} fill='#FFF' width={24} height={24}/></div>
-                                <div styleName='colText'>See all {this.props.amount}</div>
+                            <span styleName= {this.state.colPos}>
+                                <div><Icon name={'24x24_grid'} fill='#FFF' width={this.state.width} height={this.state.height}/></div>
+                                <div styleName={this.state.colText}>See all {this.props.amount}</div>
                             </span>
                         </div>
             </table>

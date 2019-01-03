@@ -41,7 +41,6 @@ class Photos extends React.Component{
     }
 
     handleHover3 () {
-        console.log('you did it')
         this.setState({
             photo1: 'regular',
             photo2: 'regular',
