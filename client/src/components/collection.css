@@ -22,7 +22,6 @@
     display: grid;
     grid-template-columns: 1fr, 1fr;
     grid-template-rows: 1fr, 1fr;
-    flex: 50%;
     padding: 0;
     position: relative;
 }
@@ -45,19 +44,20 @@
     width: 100%;
     height: 100%;
     font-family: 'Helvetica Neue', Helvetica, 'Arial';
-    font-size: 12px;
+    font-size: 14px;
     align-items: center;
     text-align: center;
 }
 
 .colPos {
     position: relative;
-    left: 84px;
+    left: 78px;
+    top: -10px;
 }
 
 .colText {
     position: relative;
-    top: 5px;
+    top: 10px;
 }
 
 

@@ -16,14 +16,14 @@ class Collection extends React.Component {
 
     handleGridHover () {
         this.setState({
-            'show-all': 'selected',
+            table: 'selected',
             grid: 'current'
         })
     }
 
     handleGridLeave () {
         this.setState({
-            'show-all': 'regular',
+            table: 'regular',
             grid: 'normal'
         })
     }
