@@ -16,7 +16,7 @@ class Gallery extends React.Component {
     }
 
     grabPhotos () {
-        fetch(`/${this.state.restaurantId}/photos`, {
+        fetch(`http://127.0.0.1:3001/${this.state.restaurantId}/photos`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
