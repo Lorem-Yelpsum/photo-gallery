@@ -2,7 +2,7 @@ const db = require('../database/db');
 const faker = require('faker');
 
 for (var x = 0; x < 50; x++) {
-    var user = faker.name.findName();
+    var user = faker.name.firstName() + ' ' + faker.name.lastName().substr(0, 1)+ '.';
     var picturesArray = [
         'https://s3-us-west-1.amazonaws.com/photo-gallery-lorem-yelpsum/Photo-gallery/lorem-user1.jpeg',
         'https://s3-us-west-1.amazonaws.com/photo-gallery-lorem-yelpsum/Photo-gallery/lorem-user2.jpeg',
