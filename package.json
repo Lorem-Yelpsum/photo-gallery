@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon server/server.js",
-    "build": "webpack -d --watch",
+    "build": "webpack --mode production",
     "faker": "node database/fakerseed.js"
   },
   "repository": {
