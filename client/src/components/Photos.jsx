@@ -2,7 +2,6 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import Collection from './Collection.jsx';
 import style from './Photos.css';
-import Icon from './Icon.jsx';
 
 
 class Photos extends React.Component{
@@ -14,7 +13,6 @@ class Photos extends React.Component{
             photo3: 'regular',
             overlay1: 'hide',
             overlay2: 'display',
-            photoAmount: this.props.photo.length
         }
         this.handleHover1 = this.handleHover1.bind(this);
         this.handleHover2 = this.handleHover2.bind(this);
@@ -43,6 +41,7 @@ class Photos extends React.Component{
     }
 
     handleHover3 () {
+        console.log('you did it')
         this.setState({
             photo1: 'regular',
             photo2: 'regular',
@@ -68,7 +67,7 @@ class Photos extends React.Component{
                 <div styleName ='photo-layout'>
                     <div styleName = 'photo1'>
                         <div>
-                            <img src={this.props.photo[0].url} styleName = {this.state.photo1} onMouseOver = {this.handleHover1} onMouseLeave = {this.handleLeave}></img>
+                            <img src={this.props.photo[0].url} styleName = {this.state.photo1} onMouseEnter = {this.handleHover1} onMouseLeave = {this.handleLeave}></img>
                             <div styleName = {this.state.overlay1}>
                             <img src={this.props.photo[0].userPic} styleName= 'userPic'></img>
                                 <div styleName ='text-box'>
@@ -79,7 +78,7 @@ class Photos extends React.Component{
                     </div>
                     <div styleName= 'photo2'>
                         <div>
-                            <img src={this.props.photo[1].url} styleName = {this.state.photo2} onMouseOver={this.handleHover2} onMouseLeave={this.handleLeave}></img>
+                            <img src={this.props.photo[1].url} styleName = {this.state.photo2} onMouseEnter={this.handleHover2} onMouseLeave={this.handleLeave}></img>
                             <div styleName = {this.state.overlay2}>
                                 <img src={this.props.photo[1].userPic} styleName= 'userPic'></img>
                                 <div styleName ='text-box'>
@@ -90,10 +89,7 @@ class Photos extends React.Component{
                     </div>
                     <div styleName= 'photo3'>
                         <div>
-                        <Collection photos={this.props.photo.slice(2)} over= {this.handleHover3} leave= {this.handleLeave}/>
-                        <div styleName = 'collectionOverlay'>
-                        <Icon name={'24x24_grid'} fill='#FFF' width={24} height={24}/>
-                        </div>
+                        <Collection photos={this.props.photo.slice(2)} over= {this.handleHover3} leave= {this.handleLeave} amount={this.props.photo.length}/>
                         </div>
                     </div>
                 </div>

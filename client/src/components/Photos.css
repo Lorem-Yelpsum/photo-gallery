@@ -70,7 +70,7 @@
     -webkit-box-flex: 1;
     display: flex;
     flex: 1;
-    top: 200px;
+    top: 202px;
     font-family: 'Helvetica Neue', Helvetica, Arial;
     font-size: 12px;
     line-height: 1.5em;
@@ -106,11 +106,6 @@
     width: 220px;
     height: 220px;
     position: relative;
-}
-
-.collectionOverlay {
-    opacity: 1;
-    background-color: rgba(0,0,0,0.5);
 }
 
 
