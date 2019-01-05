@@ -63,3 +63,5 @@ typings/
 config.js
 
 bundle.js
+
+.pem

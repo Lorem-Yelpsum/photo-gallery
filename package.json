@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon server/server.js",
+    "start": "node server/server.js",
     "build": "webpack --mode production",
-    "seed": "node database/fakerseed.js"
+    "docker": "node database/fakerseed.js & node server/server.js",
+    "seed": "node database/fakerseed.js",
+    "createDB": "mysql -u root -p < database/schema.sql"
   },
   "repository": {
     "type": "git",
