@@ -8,7 +8,7 @@ module.exports = (restaurantId) => `
     </head>
     <body>
         <div id="gallery">this should disappear</div>
-        <script src="/bundle.js"></script>
+        <script src="http://34.205.16.26/bundle.js"></script>
         <script>
             ReactDOM.render(
             React.createElement(Gallery, {restaurantId: ${restaurantId}}, null),
