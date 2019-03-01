@@ -13,6 +13,8 @@ class Photos extends React.Component{
             photo3: 'regular',
             overlay1: 'hide',
             overlay2: 'display',
+            photos: this.props.photo,
+            carousel: false
         }
         this.handleHover1 = this.handleHover1.bind(this);
         this.handleHover2 = this.handleHover2.bind(this);

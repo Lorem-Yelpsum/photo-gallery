@@ -1,13 +1,6 @@
 const dbConfig = require('./config.js');
 const mysql = require('mysql');
 
-// module.exports = {
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'password',
-//     database: 'photo_gallery'
-// }
-
 const connection = mysql.createConnection(dbConfig);
 
 connection.connect((err) => {

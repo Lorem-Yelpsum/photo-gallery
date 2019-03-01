@@ -6,7 +6,8 @@ class Carousel extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            index: this.props.index
+            index: this.props.index,
+            photos: this.props.photos
         }
         this.previousImage=this.previousImage.bind(this);
         this.nextImage=this.nextImage.bind(this);
