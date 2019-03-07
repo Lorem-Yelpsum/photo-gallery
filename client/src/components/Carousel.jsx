@@ -64,11 +64,12 @@ class Carousel extends React.Component {
 
     render () {
         const {close, color, index, photos} = this.state;
+        const {closeModal} = this.props
         const photoInfo = photos[index] || this.props.photos[this.props.index];
         return (
-            <div styleName= 'modal-background'>
+            <div styleName= 'modal-background' onClick={closeModal}>
                 <div styleName = 'modal-main'>
-                    <div styleName ={close} onMouseEnter={this.hoverClose} onMouseLeave={this.unhoverClose}>
+                    <div styleName ={close} onMouseEnter={this.hoverClose} onMouseLeave={this.unhoverClose} onClick={closeModal}>
                     Close
                     <Icon name={'24x24_close'} fill={color} width={24} height={24}></Icon>
                     </div>

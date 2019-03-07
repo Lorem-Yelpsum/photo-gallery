@@ -26,13 +26,6 @@ class Photos extends React.Component{
         this.closeCarousel = this.closeCarousel.bind(this);
     }
 
-    // componentDidMount() {
-    //     console.log(this.props.photo);
-    //     this.setState({
-    //         photos: this.props.photo
-    //     })
-    // }
-
     handleHover1 () {
         this.setState({
             photo1: 'selected',
@@ -86,6 +79,7 @@ class Photos extends React.Component{
     }
 
     closeCarousel () {
+        console.log('hello');
         this.setState({
             carousel0: null,
             carousel1: null
@@ -99,7 +93,7 @@ class Photos extends React.Component{
             return (
                 <div styleName ='photo-layout'>
                     <div styleName = 'photo1' onClick={this.openCarousel0} >
-                    { carousel0 ? <Carousel index={0} photos= {photo} close={this.closeCarousel}/>: null}
+                    { carousel0 ? <Carousel index={0} photos= {photo} closeModal={this.closeCarousel}/>: null}
                         <div>
                             <img src={photo[0].url} styleName = {this.state.photo1} onMouseEnter = {this.handleHover1} onMouseLeave = {this.handleLeave}></img>
                             <div styleName = {this.state.overlay1}>
