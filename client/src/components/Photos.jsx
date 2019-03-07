@@ -14,13 +14,15 @@ class Photos extends React.Component{
             overlay1: 'hide',
             overlay2: 'display',
             photos: this.props.photo,
-            carousel: null
+            carousel0: null,
+            carousel1: null
         }
         this.handleHover1 = this.handleHover1.bind(this);
         this.handleHover2 = this.handleHover2.bind(this);
         this.handleHover3 = this.handleHover3.bind(this);
         this.handleLeave = this.handleLeave.bind(this);
-        this.openCarousel = this.openCarousel.bind(this);
+        this.openCarousel0 = this.openCarousel0.bind(this);
+        this.openCarousel1 = this.openCarousel1.bind(this);
         this.closeCarousel = this.closeCarousel.bind(this);
     }
 
@@ -64,25 +66,32 @@ class Photos extends React.Component{
         })
     }
 
-    openCarousel () {
+    openCarousel0 () {
         this.setState({
-            carousel: true
+            carousel0: true
+        });
+    }
+
+    openCarousel1 () {
+        this.setState({
+            carousel1: true
         });
     }
 
     closeCarousel () {
         this.setState({
-            carousel: null
+            carousel0: null,
+            carousel1: null
         });
     }
 
     render () {
-        const { carousel, photos } = this.state
+        const { carousel0, carousel1, photos } = this.state
         if (this.props.photo.length > 0) {
             return (
                 <div styleName ='photo-layout'>
-                    <div styleName = 'photo1' onClick={this.openCarousel} >
-                    { carousel ? <Carousel index={0} photos= {photos} />: null}
+                    <div styleName = 'photo1' onClick={this.openCarousel0} >
+                    { carousel0 ? <Carousel index={0} photos= {photos} />: null}
                         <div>
                             <img src={this.props.photo[0].url} styleName = {this.state.photo1} onMouseEnter = {this.handleHover1} onMouseLeave = {this.handleLeave}></img>
                             <div styleName = {this.state.overlay1}>
@@ -93,8 +102,8 @@ class Photos extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div styleName= 'photo2'>
-                    { carousel ? <Carousel index={1} photos= {photos} />: null}
+                    <div styleName= 'photo2' onClick ={this.openCarousel1}>
+                    { carousel1 ? <Carousel index={1} photos= {photos} />: null}
                         <div>
                             <img src={this.props.photo[1].url} styleName = {this.state.photo2} onMouseEnter={this.handleHover2} onMouseLeave={this.handleLeave}></img>
                             <div styleName = {this.state.overlay2}>

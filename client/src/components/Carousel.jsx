@@ -1,5 +1,7 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
+import style from './Carousel.css';
+import Icon from './Icon.jsx';
 
 
 class Carousel extends React.Component {
@@ -39,9 +41,16 @@ class Carousel extends React.Component {
             return null;
         }
         return (
-            <div>Hello World</div>
+            <div styleName= 'modal-background'>
+                <div styleName = 'modal-main'>
+                    <div styleName ='close'>
+                    Close
+                    <Icon name={'24x24_close'} fill='#808080' width={24} height={24}></Icon>
+                    </div>
+                </div>
+            </div>
         )
     }
 }
 
-export default Carousel;
+export default CSSModules(Carousel, style, {allowMultiple: true});
