@@ -43,6 +43,7 @@ class Collection extends React.Component {
     render () {
         return (
             <table styleName = {this.state.table} onMouseEnter = {() => {this.props.over(); this.handleGridHover();}} onMouseLeave = {() => {this.props.leave(); this.handleGridLeave()}}cellPadding='0' cellSpacing='0'>
+            <tbody>
                 <tr>
                     <td><img src={this.props.photos[0].url} styleName = {this.state.grid}></img></td>
                     <td><img src={this.props.photos[1].url} styleName = {this.state.grid}></img></td>
@@ -51,6 +52,7 @@ class Collection extends React.Component {
                     <td> <img src={this.props.photos[2].url} styleName = {this.state.grid}></img></td>
                     <td><img src={this.props.photos[3].url} styleName = {this.state.grid}></img></td>
                 </tr>
+            </tbody>
                 <div styleName = 'collectionOverlay'>
                             <span styleName= {this.state.colPos}>
                                 <div><Icon name={'24x24_grid'} fill='#FFF' width={this.state.width} height={this.state.height}/></div>

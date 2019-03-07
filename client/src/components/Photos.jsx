@@ -13,7 +13,7 @@ class Photos extends React.Component{
             photo3: 'regular',
             overlay1: 'hide',
             overlay2: 'display',
-            photos: this.props.photo,
+            photos: [],
             carousel0: null,
             carousel1: null
         }
@@ -25,6 +25,13 @@ class Photos extends React.Component{
         this.openCarousel1 = this.openCarousel1.bind(this);
         this.closeCarousel = this.closeCarousel.bind(this);
     }
+
+    // componentDidMount() {
+    //     console.log(this.props.photo);
+    //     this.setState({
+    //         photos: this.props.photo
+    //     })
+    // }
 
     handleHover1 () {
         this.setState({
@@ -86,37 +93,38 @@ class Photos extends React.Component{
     }
 
     render () {
-        const { carousel0, carousel1, photos } = this.state
-        if (this.props.photo.length > 0) {
+        const { carousel0, carousel1} = this.state
+        const {photo} = this.props
+        if (photo.length > 0) {
             return (
                 <div styleName ='photo-layout'>
                     <div styleName = 'photo1' onClick={this.openCarousel0} >
-                    { carousel0 ? <Carousel index={0} photos= {photos} />: null}
+                    { carousel0 ? <Carousel index={0} photos= {photo} close={this.closeCarousel}/>: null}
                         <div>
-                            <img src={this.props.photo[0].url} styleName = {this.state.photo1} onMouseEnter = {this.handleHover1} onMouseLeave = {this.handleLeave}></img>
+                            <img src={photo[0].url} styleName = {this.state.photo1} onMouseEnter = {this.handleHover1} onMouseLeave = {this.handleLeave}></img>
                             <div styleName = {this.state.overlay1}>
-                            <img src={this.props.photo[0].userPic} styleName= 'userPic'></img>
+                            <img src={photo[0].userPic} styleName= 'userPic'></img>
                                 <div styleName ='text-box'>
-                                    <span styleName = 'text'>{this.props.photo[0].comments} </span> <span styleName ='user'>by {this.props.photo[0].user}</span>
+                                    <span styleName = 'text'>{photo[0].comments} </span> <span styleName ='user'>by {photo[0].user}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div styleName= 'photo2' onClick ={this.openCarousel1}>
-                    { carousel1 ? <Carousel index={1} photos= {photos} />: null}
+                    { carousel1 ? <Carousel index={1} photos= {photo} close={this.closeCarousel}/>: null}
                         <div>
-                            <img src={this.props.photo[1].url} styleName = {this.state.photo2} onMouseEnter={this.handleHover2} onMouseLeave={this.handleLeave}></img>
+                            <img src={photo[1].url} styleName = {this.state.photo2} onMouseEnter={this.handleHover2} onMouseLeave={this.handleLeave}></img>
                             <div styleName = {this.state.overlay2}>
-                                <img src={this.props.photo[1].userPic} styleName= 'userPic'></img>
+                                <img src={photo[1].userPic} styleName= 'userPic'></img>
                                 <div styleName ='text-box'>
-                                    <span styleName = 'text'>{this.props.photo[1].comments} </span> <span styleName ='user'>by {this.props.photo[1].user}</span>
+                                    <span styleName = 'text'>{photo[1].comments} </span> <span styleName ='user'>by {photo[1].user}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div styleName= 'photo3'>
                         <div>
-                        <Collection photos={this.props.photo.slice(2)} over= {this.handleHover3} leave= {this.handleLeave} amount={this.props.photo.length}/>
+                        <Collection photos={photo.slice(2)} over= {this.handleHover3} leave= {this.handleLeave} amount={photo.length}/>
                         </div>
                     </div>
                 </div>

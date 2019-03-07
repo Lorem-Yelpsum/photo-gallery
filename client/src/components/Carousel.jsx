@@ -8,8 +8,8 @@ class Carousel extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            index: this.props.index,
-            photos: this.props.photos,
+            index: 0,
+            photos: [],
             close: 'unhovered',
             color: '#808080'
         }
@@ -17,6 +17,14 @@ class Carousel extends React.Component {
         this.nextImage=this.nextImage.bind(this);
         this.hoverClose = this.hoverClose.bind(this);
         this.unhoverClose = this.unhoverClose.bind(this);
+    }
+
+    componentWillReceiveProps(props) {
+        const {photos, index} = props
+        this.setState({
+            index,
+            photos
+        })
     }
 
     previousImage() {
@@ -55,7 +63,8 @@ class Carousel extends React.Component {
 
 
     render () {
-        const {close, color} = this.state
+        const {close, color, index, photos} = this.state;
+        const photoInfo = photos[index] || this.props.photos[this.props.index];
         return (
             <div styleName= 'modal-background'>
                 <div styleName = 'modal-main'>
@@ -66,7 +75,7 @@ class Carousel extends React.Component {
                     <div styleName = 'picture-info'>
                         <div styleName ='picture-detail-grid'>
                             <div styleName='media'>
-                            <img></img>
+                            <img src={photoInfo.url}></img>
                             <div styleName = 'picture-footer'>
                             </div>
                             </div>
