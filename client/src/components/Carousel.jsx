@@ -63,6 +63,17 @@ class Carousel extends React.Component {
                     Close
                     <Icon name={'24x24_close'} fill={color} width={24} height={24}></Icon>
                     </div>
+                    <div styleName = 'picture-info'>
+                        <div styleName ='picture-detail-grid'>
+                            <div styleName='media'>
+                            <img></img>
+                            <div styleName = 'picture-footer'>
+                            </div>
+                            </div>
+                        </div>
+                        <div styleName = 'sidebar'>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

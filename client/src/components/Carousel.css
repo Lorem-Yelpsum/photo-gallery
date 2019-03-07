@@ -10,18 +10,44 @@
 }
 
 .modal-main{
-  width: 80%;
+  width: 90%;
   height: auto;
 }
 
 .unhovered {
   fill: "#808080";
   font-family: 'Helvetica Neue', Helvetica, 'Arial';
-  text-decoration-color: "#808080";
+  color: rgb(128,128,128);
+  display: flex;
+  align-items: center;
 }
 
 .hovered {
   fill: white;
   font-family: 'Helvetica Neue', Helvetica, 'Arial';
-  text-decoration-color: white;
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.picture-info{
+  width: 100%;
+  height: auto;
+}
+
+.picture-detail-grid{
+  display: grid
+}
+
+.media{
+
+}
+
+.picture-footer{
+
+}
+
+.sidebar {
+
 }
