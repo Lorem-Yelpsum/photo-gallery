@@ -4,7 +4,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 200;
+  z-index: 1000;
   width: 100%;
   height: auto;
+}
+
+.modal-main{
+  width: 80%;
+  height: auto;
+}
+
+.unhovered {
+  fill: "#808080";
+  font-family: 'Helvetica Neue', Helvetica, 'Arial';
+  text-decoration-color: "#808080";
+}
+
+.hovered {
+  fill: white;
+  font-family: 'Helvetica Neue', Helvetica, 'Arial';
+  text-decoration-color: white;
 }

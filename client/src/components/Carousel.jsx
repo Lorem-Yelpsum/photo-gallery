@@ -9,10 +9,14 @@ class Carousel extends React.Component {
         super(props)
         this.state = {
             index: this.props.index,
-            photos: this.props.photos
+            photos: this.props.photos,
+            close: 'unhovered',
+            color: '#808080'
         }
         this.previousImage=this.previousImage.bind(this);
         this.nextImage=this.nextImage.bind(this);
+        this.hoverClose = this.hoverClose.bind(this);
+        this.unhoverClose = this.unhoverClose.bind(this);
     }
 
     previousImage() {
@@ -35,17 +39,29 @@ class Carousel extends React.Component {
         })
     }
 
+    hoverClose () {
+        this.setState({
+            close: 'hovered',
+            color: 'white'
+        })
+    }
+
+    unhoverClose () {
+        this.setState({
+            close: 'unhovered',
+            color: '#808080'
+        })
+    }
+
 
     render () {
-        if (this.props.open === false) {
-            return null;
-        }
+        const {close, color} = this.state
         return (
             <div styleName= 'modal-background'>
                 <div styleName = 'modal-main'>
-                    <div styleName ='close'>
+                    <div styleName ={close} onMouseEnter={this.hoverClose} onMouseLeave={this.unhoverClose}>
                     Close
-                    <Icon name={'24x24_close'} fill='#808080' width={24} height={24}></Icon>
+                    <Icon name={'24x24_close'} fill={color} width={24} height={24}></Icon>
                     </div>
                 </div>
             </div>
