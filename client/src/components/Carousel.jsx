@@ -11,7 +11,8 @@ class Carousel extends React.Component {
             index: 0,
             photos: [],
             close: 'unhovered',
-            color: '#808080'
+            color: '#808080',
+            elite: 0
         }
         this.previousImage=this.previousImage.bind(this);
         this.nextImage=this.nextImage.bind(this);
@@ -21,9 +22,11 @@ class Carousel extends React.Component {
 
     componentWillReceiveProps(props) {
         const {photos, index} = props
+
         this.setState({
             index,
-            photos
+            photos,
+            elite: props.photos[index].elite
         })
     }
 
@@ -63,9 +66,10 @@ class Carousel extends React.Component {
 
 
     render () {
-        const {close, color, index, photos} = this.state;
+        const {close, color, index, photos, elite} = this.state;
         const {closeModal} = this.props
         const photoInfo = photos[index] || this.props.photos[this.props.index];
+        console.log(photoInfo);
         return (
             <div styleName= 'modal-background' onClick={ closeModal}>
                 <div styleName = 'modal-main'>
@@ -76,12 +80,35 @@ class Carousel extends React.Component {
                     <div styleName = 'picture-info'>
                         <div styleName ='picture-detail-grid'>
                             <div styleName='media'>
-                            <img src={photoInfo.url}></img>
+                            <img src={photoInfo.url} styleName ='picture'></img>
                             <div styleName = 'picture-footer'>
                             </div>
                             </div>
                         </div>
                         <div styleName = 'sidebar'>
+                            <div styleName = 'user-info'>
+                                <img styleName = 'user-avatar' src={photoInfo.userPic}></img>
+                                <div styleName ='user-stats'>
+                                    <span>
+                                        <div styleName='friend-count'>
+                                            <span>
+                                                <Icon />
+                                                <div styleName ='stat-color'>{photoInfo.friends}</div>
+                                            </span>
+                                        </div>
+                                        <div styleName ='review-count'>
+                                        <span>
+                                                <Icon />
+                                                <div styleName ='stat-color'>{photoInfo.reviews}</div>
+                                            </span>
+                                        </div>
+                                        {elite === 1 ? 
+                                        <div>
+                                            <div styleName='elite'>Elite '19</div>
+                                        </div> : null}
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
