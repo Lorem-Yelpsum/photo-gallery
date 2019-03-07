@@ -79,7 +79,6 @@ class Photos extends React.Component{
     }
 
     closeCarousel () {
-        console.log('hello');
         this.setState({
             carousel0: null,
             carousel1: null
@@ -92,8 +91,9 @@ class Photos extends React.Component{
         if (photo.length > 0) {
             return (
                 <div styleName ='photo-layout'>
-                    <div styleName = 'photo1' onClick={this.openCarousel0} >
                     { carousel0 ? <Carousel index={0} photos= {photo} closeModal={this.closeCarousel}/>: null}
+                    { carousel1 ? <Carousel index={1} photos= {photo} closeModal={this.closeCarousel}/>: null}
+                    <div styleName = 'photo1' onClick={this.openCarousel0} >
                         <div>
                             <img src={photo[0].url} styleName = {this.state.photo1} onMouseEnter = {this.handleHover1} onMouseLeave = {this.handleLeave}></img>
                             <div styleName = {this.state.overlay1}>
@@ -105,7 +105,6 @@ class Photos extends React.Component{
                         </div>
                     </div>
                     <div styleName= 'photo2' onClick ={this.openCarousel1}>
-                    { carousel1 ? <Carousel index={1} photos= {photo} close={this.closeCarousel}/>: null}
                         <div>
                             <img src={photo[1].url} styleName = {this.state.photo2} onMouseEnter={this.handleHover2} onMouseLeave={this.handleLeave}></img>
                             <div styleName = {this.state.overlay2}>

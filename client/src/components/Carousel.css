@@ -7,6 +7,8 @@
   z-index: 1000;
   width: 100%;
   height: auto;
+  top: 0;
+  left: 0;
 }
 
 .modal-main{
@@ -23,6 +25,7 @@
   padding: 1em;
   position: relative;
   left: 75em;
+  font-weight: bold;
 }
 
 .hovered {
@@ -35,6 +38,7 @@
   position: relative;
   padding: 1em;
   left: 75em;
+  font-weight: bold;
 }
 
 .picture-info{

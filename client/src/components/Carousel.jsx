@@ -67,7 +67,7 @@ class Carousel extends React.Component {
         const {closeModal} = this.props
         const photoInfo = photos[index] || this.props.photos[this.props.index];
         return (
-            <div styleName= 'modal-background' onClick={closeModal}>
+            <div styleName= 'modal-background' onClick={ closeModal}>
                 <div styleName = 'modal-main'>
                     <div styleName ={close} onMouseEnter={this.hoverClose} onMouseLeave={this.unhoverClose} onClick={closeModal}>
                     Close
