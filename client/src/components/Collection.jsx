@@ -56,7 +56,7 @@ class Collection extends React.Component {
                 <div styleName = 'collectionOverlay'>
                             <span styleName= {this.state.colPos}>
                                 <div><Icon name={'24x24_grid'} fill='#FFF' width={this.state.width} height={this.state.height}/></div>
-                                <div styleName={this.state.colText}>See all {this.props.amount}</div>
+                                <div styleName={this.state.colText}>See all {this.props.amount} photos</div>
                             </span>
                         </div>
             </table>

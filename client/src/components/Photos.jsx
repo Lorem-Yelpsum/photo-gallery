@@ -99,7 +99,7 @@ class Photos extends React.Component{
                             <div styleName = {this.state.overlay1}>
                             <img src={photo[0].userPic} styleName= 'userPic'></img>
                                 <div styleName ='text-box'>
-                                    <span styleName = 'text'>{photo[0].comments} </span> <span styleName ='user'>by {photo[0].user}</span>
+                                    <span styleName = 'text'>{photo[0].comments.slice(0, 25)} </span> <span styleName ='user'>by {photo[0].user}</span>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,8 @@ class Photos extends React.Component{
                             <div styleName = {this.state.overlay2}>
                                 <img src={photo[1].userPic} styleName= 'userPic'></img>
                                 <div styleName ='text-box'>
-                                    <span styleName = 'text'>{photo[1].comments} </span> <span styleName ='user'>by {photo[1].user}</span>
+                                    <span styleName = 'text'>{photo[1].comments.slice(0, 25)} </span> 
+                                    <span styleName ='user'>by {photo[1].user}</span>
                                 </div>
                             </div>
                         </div>
