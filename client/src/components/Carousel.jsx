@@ -15,6 +15,7 @@ class Carousel extends React.Component {
             browse: '#999',
             share: '#999',
             compliment: '#999',
+            flag: '#999',
             elite: 0
         }
         this.previousImage=this.previousImage.bind(this);
@@ -84,15 +85,21 @@ class Carousel extends React.Component {
     }
 
     render () {
-        const {close, color, index, photos, elite, browse, share, compliment} = this.state;
+        const {close, color, index, photos, elite, browse, share, compliment, flag} = this.state;
         const {closeModal} = this.props
         const photoInfo = photos[index] || this.props.photos[this.props.index];
         return (
             <div styleName= 'modal-background' onClick={ closeModal}>
                 <div styleName = 'modal-main'>
-                    <div styleName ={close} onMouseEnter={this.hoverClose} onMouseLeave={this.unhoverClose} onClick={closeModal}>
+                    <div styleName ={close} 
+                    onMouseEnter={this.hoverClose} 
+                    onMouseLeave={this.unhoverClose} 
+                    onClick={closeModal}>
                     Close
-                    <Icon name={'24x24_close'} fill={color} width={24} height={24}></Icon>
+                    <Icon name={'24x24_close'} 
+                    fill={color} 
+                    width={24} 
+                    height={24}></Icon>
                     </div>
                     <div styleName = 'picture-info'>
                         <div styleName ='picture-detail-grid'>
@@ -100,21 +107,43 @@ class Carousel extends React.Component {
                             <img src={photoInfo.url} styleName ='picture'></img>
                             <div styleName = 'picture-footer'>
                                 <span>
-                                    <div styleName = 'browse' onMouseEnter = {(e) => {this.hoverBrowse(e)}}
-                                    onMouseLeave = {(e)=> {this.unhoverBrowse(e)}} name ='browse'>
-                                        <Icon name={'18x18_grid'} fill={browse} width={18} height={18}/>
+                                    <div styleName = 'browse' 
+                                    onMouseEnter = {(e) => {this.hoverBrowse(e)}}
+                                    onMouseLeave = {(e)=> {this.unhoverBrowse(e)}} 
+                                    name ='browse'>
+                                        <Icon name={'18x18_grid'} 
+                                        fill={browse} 
+                                        width={18} 
+                                        height={18}/>
                                         Browse all
                                     </div>
-                                    <div>{index +1} of {photos.length}</div>
-                                    <div styleName = 'browse' onMouseEnter = {(e) => {this.hoverBrowse(e)}}
+                                    <div styleName='current-photo'>{index +1} of {photos.length}</div>
+                                    <div styleName = 'browse' 
+                                    onMouseEnter = {(e) => {this.hoverBrowse(e)}}
                                     onMouseLeave = {(e)=> {this.unhoverBrowse(e)}} name ='share'>
-                                        <Icon name={'18x18_share'} fill={share} width={18} height={18}/>
+                                        <Icon name={'18x18_share'} 
+                                        fill={share} 
+                                        width={18} 
+                                        height={18}/>
                                         Share
                                     </div>
-                                    <div styleName = 'browse' onMouseEnter = {(e) => {this.hoverBrowse(e)}}
-                                    onMouseLeave = {(e)=> {this.unhoverBrowse(e)}} name ='compliment'>
-                                        <Icon name={'18x18_grid'} fill={compliment} width={18} height={18}/>
+                                    <div styleName = 'browse' 
+                                    onMouseEnter = {(e) => {this.hoverBrowse(e)}}
+                                    onMouseLeave = {(e)=> {this.unhoverBrowse(e)}} 
+                                    name ='compliment'>
+                                        <Icon name={'18x18_grid'} 
+                                        fill={compliment} 
+                                        width={18} 
+                                        height={18}/>
                                         Compliment
+                                    </div>
+                                    <div name='flag'
+                                    onMouseEnter = {(e) => {this.hoverBrowse(e)}}
+                                    onMouseLeave = {(e)=> {this.unhoverBrowse(e)}}>
+                                    <Icon name={'18x18_flag'} 
+                                    fill={flag} 
+                                    width={18} 
+                                    height={18}/>
                                     </div>
                                 </span>
                             </div>
@@ -128,13 +157,19 @@ class Carousel extends React.Component {
                                     <span>
                                         <div styleName='friend-count'>
                                             <span>
-                                                <Icon name={'18x18_friends'}  fill = {'#f15c00'}width={18} height={18}/>
+                                                <Icon name={'18x18_friends'}  
+                                                fill = {'#f15c00'}
+                                                width={18} 
+                                                height={18}/>
                                                 <div styleName ='stat-color'>{photoInfo.friends}</div>
                                             </span>
                                         </div>
                                         <div styleName ='review-count'>
                                         <span>
-                                        <Icon name={'18x18_review'}  fill = {'#f15c00'}width={18} height={18}/>
+                                        <Icon name={'18x18_review'}  
+                                        fill = {'#f15c00'}
+                                        width={18} 
+                                        height={18}/>
                                                 <div styleName ='stat-color'>{photoInfo.reviews}</div>
                                             </span>
                                         </div>
